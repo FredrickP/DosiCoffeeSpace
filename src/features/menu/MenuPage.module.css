@@ -1,0 +1,131 @@
+.menuSection {
+  padding-block: var(--space-3xl);
+  color: var(--color-text-light);
+  background-color: var(--color-coffee);
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.title em {
+  color: #dc815a;
+  font-weight: 600;
+}
+
+.headingDescription {
+  max-width: 390px;
+  padding-bottom: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 4rem;
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filterButton {
+  flex-shrink: 0;
+  padding: 0.75rem 1.1rem;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.filterButton:hover {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.filterButtonActive {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.result {
+  margin-top: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3.5rem 1.25rem;
+  margin-top: 2rem;
+}
+
+/* Laptop kecil */
+@media (max-width: 1100px) {
+  .menuGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .headingDescription {
+    padding-bottom: 0;
+  }
+
+  .filters {
+    margin-top: 3rem;
+  }
+
+  .menuGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .menuSection {
+    padding-block: 5rem;
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .filters {
+    width: calc(100% + var(--container-padding));
+    margin-top: 2.5rem;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
