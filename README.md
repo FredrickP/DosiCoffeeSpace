@@ -1,75 +1,178 @@
-# React + TypeScript + Vite
+# DOSI Coffee & Space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DOSI Coffee & Space adalah website café modern yang menghadirkan informasi mengenai menu, signature coffee, suasana café, fasilitas, lokasi, dan reservasi.
 
-Currently, two official plugins are available:
+DOSI menggunakan biji kopi pilihan dari dataran tinggi Sidikalang sebagai house beans, dengan identitas utama:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> Coffee · Food · Community
 
-## React Compiler
+## Tentang DOSI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+DOSI lahir dari keyakinan sederhana bahwa hari yang baik sering kali dimulai dari secangkir kopi dan orang-orang yang tepat.
 
-## Expanding the ESLint configuration
+Website ini dirancang untuk memberikan pengalaman digital yang hangat, modern, dan responsif bagi pengunjung yang ingin:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Mengenal DOSI Coffee & Space
+- Melihat kategori dan daftar menu
+- Menemukan signature menu DOSI
+- Mengetahui fasilitas dan suasana café
+- Melihat lokasi serta jam operasional
+- Melakukan reservasi meja
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Fitur
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Responsive navigation dengan mobile menu
+- Full-screen hero section
+- Informasi dan cerita tentang DOSI
+- Daftar menu berdasarkan kategori
+- Filter menu interaktif
+- Format harga dalam Rupiah
+- Informasi ketersediaan menu
+- Badge Signature, Best Seller, Recommended, dan New
+- Informasi fasilitas café
+- Responsive layout untuk desktop, tablet, dan mobile
+- Semantic HTML dan basic accessibility
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Kategori Menu
 
+Menu DOSI dikelompokkan menjadi:
+
+- DOSI Signature
+- Espresso Based
+- Manual Brew
+- Non Coffee
+- Food & Bites
+
+Sidikalang digunakan sebagai house beans DOSI, sedangkan nama signature drink tetap menggunakan identitas DOSI.
+
+## Teknologi
+
+Project ini dibangun menggunakan:
+
+- React
+- TypeScript
+- Vite
+- CSS Modules
+- ESLint
+- Native CSS Variables
+- Responsive Web Design
+
+## Struktur Project
+
+```text
+src/
+├── assets/
+│   ├── icons/
+│   └── images/
+├── components/
+│   ├── layout/
+│   └── ui/
+├── features/
+│   ├── home/
+│   │   ├── components/
+│   │   └── HomePage.tsx
+│   ├── menu/
+│   │   ├── components/
+│   │   ├── data/
+│   │   ├── types/
+│   │   └── MenuPage.tsx
+│   └── reservation/
+│       ├── components/
+│       ├── types/
+│       └── ReservationPage.tsx
+├── routes/
+├── styles/
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Project menggunakan pendekatan feature-based architecture. Komponen dikelompokkan berdasarkan fitur bisnis agar lebih mudah dikembangkan dan dipelihara.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Menjalankan Project
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Pastikan Node.js dan npm sudah terpasang.
 
+Clone repository:
+
+```bash
+git clone https://github.com/FredrickP/DosiCoffeeSpace.git
 ```
+
+Masuk ke folder project:
+
+```bash
+cd DosiCoffeeSpace
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Jalankan development server:
+
+```bash
+npm run dev
+```
+
+Buka URL yang ditampilkan Vite, biasanya:
+
+```text
+http://localhost:5173
+```
+
+## Production Build
+
+Jalankan pemeriksaan lint:
+
+```bash
+npm run lint
+```
+
+Buat production build:
+
+```bash
+npm run build
+```
+
+Preview hasil production build:
+
+```bash
+npm run preview
+```
+
+## Responsive Breakpoints
+
+Website dioptimalkan untuk beberapa ukuran layar:
+
+| Perangkat | Ukuran |
+|---|---:|
+| Mobile kecil | Hingga 380px |
+| Mobile | Hingga 600px |
+| Tablet | Hingga 900px |
+| Laptop kecil | Hingga 1100px |
+| Desktop | Di atas 1100px |
+
+## Roadmap
+
+Fitur yang akan dikembangkan berikutnya:
+
+- Location dan opening hours
+- Form reservasi meja
+- Integrasi reservasi melalui WhatsApp
+- Galeri café
+- Customer testimonials
+- Dashboard admin
+- Pengelolaan menu melalui database
+- Integrasi Supabase
+- SEO dan social media metadata
+- Deployment production
+
+## Repository
+
+[github.com/FredrickP/DosiCoffeeSpace](https://github.com/FredrickP/DosiCoffeeSpace)
+
+## Author
+
+Developed by [Fredrick Pardosi](https://github.com/FredrickP).
