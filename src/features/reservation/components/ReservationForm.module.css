@@ -1,0 +1,112 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.fieldGroup {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldGroup label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.fieldGroup label span {
+  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fieldGroup input,
+.fieldGroup select,
+.fieldGroup textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  outline: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.fieldGroup textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.fieldGroup input::placeholder,
+.fieldGroup textarea::placeholder {
+  color: #9b8e85;
+}
+
+.fieldGroup input:hover,
+.fieldGroup select:hover,
+.fieldGroup textarea:hover {
+  border-color: rgba(43, 32, 25, 0.35);
+}
+
+.fieldGroup input:focus,
+.fieldGroup select:focus,
+.fieldGroup textarea:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(198, 93, 50, 0.13);
+}
+
+.fieldGroup small {
+  align-self: flex-end;
+  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+}
+
+.message {
+  min-height: 1.5rem;
+  text-align: center;
+}
+
+.successMessage,
+.errorMessage {
+  font-size: var(--font-size-sm);
+}
+
+.successMessage {
+  color: #377851;
+}
+
+.errorMessage {
+  color: #b33a3a;
+}
+
+@media (max-width: 520px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldGroup input,
+  .fieldGroup select,
+  .fieldGroup textarea {
+    min-height: 3.25rem;
+  }
+}
